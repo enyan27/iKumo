@@ -17,10 +17,8 @@ const Header = ({
       <Search />
       <div className="header-wrapper">
         <FileUploader ownerId={userId} accountId={accountId} />
-        <form
-          action={async () => {
-            "use server";
-
+        <form action={async () => {
+            'use server';
             await signOutUser();
           }}
         >

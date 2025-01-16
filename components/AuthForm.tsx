@@ -52,11 +52,10 @@ const AuthForm = ({ type }: { type: FormType }) => {
 
     try {
       const user =
-        type === "sign-up"
-          ? await createAccount({
-              fullName: values.fullName || "",
-              email: values.email,
-            })
+        type === "sign-up" ? await createAccount({
+          fullName: values.fullName || "",
+          email: values.email,
+        })
           : await signInUser({ email: values.email });
 
       setAccountId(user.accountId);
